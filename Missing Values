@@ -1,0 +1,10 @@
+import pandas as pd
+
+# Read CSV
+data = pd.read_csv('data.csv')
+
+# Calculate and report missing value statistics
+missing_stats = data.isnull().sum()
+missing_report = f"Missing Value Statistics:\n{missing_stats}"
+with open('missing_report.txt', 'w') as f:
+    f.write(missing_report)
